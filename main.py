@@ -23,15 +23,3 @@ class CalculatorApp(App):
 
 if __name__ == "__main__":
     CalculatorApp().run()
-
-
-
-'''
-<Widgets>:
-    Button:
-        text: "1"
-        size: 100, 75
-        pos: 0, 0
-        color: 0, 1, 0, 1
-        font_size: 32
-'''
