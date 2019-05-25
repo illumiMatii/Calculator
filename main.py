@@ -5,17 +5,23 @@ from kivy.config import Config
 
 
 class CalculatorLayout(GridLayout):
+    def del_one(self, delete):
+        self.display.text = delete[:-1]
+
     def calc(self, calculate):
-        if calculate:
-            try:
-                self.display.text = str(eval(calculate))
-            except ZeroDivisionError:
-                self.display.text = "You can't devide by zero"
-            except:
-                self.display.text = "You did something wrong"
+        if not calculate: return
+
+        try:
+            self.display.text = str(eval(calculate))
+        except ZeroDivisionError:
+            self.display.text = "You can't devide by zero"
+        except:
+            self.display.text = "You did something wrong"
+    
 
 
 class CalculatorApp(App):
+    floating = False
     def build(self):
         Config.set("graphics", "width", "430")
         Config.set("graphics", "height", "600")
