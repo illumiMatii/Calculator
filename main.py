@@ -5,6 +5,7 @@ from kivy.config import Config
 
 
 class CalculatorLayout(GridLayout):
+   
     def del_one(self, delete):
         self.display.text = delete[:-1]
 
@@ -17,11 +18,11 @@ class CalculatorLayout(GridLayout):
             self.display.text = "You can't devide by zero"
         except:
             self.display.text = "You did something wrong"
-    
-
 
 class CalculatorApp(App):
     floating = False
+    onlyoneparam = False
+    
     def build(self):
         Config.set("graphics", "width", "430")
         Config.set("graphics", "height", "600")
