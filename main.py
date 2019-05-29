@@ -1,4 +1,4 @@
-#kivy.require("1.10.1")
+# kivy.require("1.10.1")
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.config import Config
@@ -20,7 +20,7 @@ class CalculatorLayout(GridLayout):
         except ZeroDivisionError:
             self.display.text = "You can't devide by zero"
         except:
-            self.display.text = "More than one decimal point per number!"
+            self.display.text = "Too much decimal points!"
 
 class CalculatorApp(App):
     floating = False
