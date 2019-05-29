@@ -5,7 +5,10 @@ from kivy.config import Config
 
 
 class CalculatorLayout(GridLayout):
-   
+    
+    def clear_all(self, clear):
+        self.display.text = clear[:0]
+
     def del_one(self, delete):
         self.display.text = delete[:-1]
 
@@ -17,12 +20,11 @@ class CalculatorLayout(GridLayout):
         except ZeroDivisionError:
             self.display.text = "You can't devide by zero"
         except:
-            self.display.text = "You did something wrong"
+            self.display.text = "More than one decimal point per number!"
 
 class CalculatorApp(App):
     floating = False
     onlyoneparam = False
-    
     def build(self):
         Config.set("graphics", "width", "430")
         Config.set("graphics", "height", "600")
